@@ -9,10 +9,10 @@ import type { Case } from "../types";
 
 const tabs = [
 { id: "brief", label: "案件概要", icon: Book },
-{ id: "workspace", label: "SQL工作区", icon: Code },
-{ id: "submission", label: "解决方案", icon: Send },
+{ id: "workspace", label: "SQL 查询区", icon: Code },
+{ id: "submission", label: "提交答案", icon: Send },
 { id: "schema", label: "数据库结构", icon: Database },
-{ id: "hints", label: "提示与技巧", icon: HelpCircle },
+{ id: "hints", label: "提示与建议", icon: HelpCircle },
 ];
 
 interface CaseStudyProps {

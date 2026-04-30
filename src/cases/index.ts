@@ -23,7 +23,7 @@ export const categories = [
     icon: Search,
     requiredXP: 0,
     description:
-      "非常适合 SQL 新手。学习查询和数据分析的基础知识。",
+      "适合刚开始学习 SQL 的玩家，用来熟悉查询和数据分析的基础方法。",
   },
   {
     id: "intermediate",
@@ -35,7 +35,7 @@ export const categories = [
   },
   {
     id: "advanced",
-    title: "高级案例",
+    title: "高阶案件",
     icon: Award,
     requiredXP: 300,
     description:

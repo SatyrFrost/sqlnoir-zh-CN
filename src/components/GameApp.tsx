@@ -8,9 +8,9 @@ import { Dashboard } from "./Dashboard";
 /** Tiny modal confirm for Reset All */
 function ConfirmModal({
   open,
-  title = "确定要重置吗？",
-  message = "这会清除所有已完成案件和笔记。此操作不可撤销。",
-  confirmText = "确定重置",
+  title = "确定要重置进度吗？",
+  message = "这将清除所有已完成案件和笔记，且无法恢复。",
+  confirmText = "确认重置",
   cancelText = "取消",
   onConfirm,
   onCancel,
@@ -187,8 +187,17 @@ export function GameApp() {
         </div>
       </div>
 	  <div className="fixed bottom-4 right-4 text-right text-xs md:text-sm text-amber-200/80 leading-relaxed">
-		<div>Inspired by SQL Noir (sqlnoir.com)</div>
-		<div>灵感来源于 SQL Noir（sqlnoir.com）</div>
+		<div>改编自 Hristo Bogoev 创作的 SQL Noir</div>
+		<div>
+			<a
+			  href="https://sqlnoir.com"
+			  target="_blank"
+			  rel="noopener noreferrer"
+			  className="underline hover:text-amber-100 transition-colors"
+			>
+			sqlnoir.com
+			</a>
+		</div>
 	  </div>
     </div>
   );

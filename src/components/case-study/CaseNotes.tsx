@@ -38,7 +38,7 @@ export function CaseNotes({ caseId }: CaseNotesProps) {
         <textarea
           value={notes}
           onChange={handleChange}
-          placeholder="在这里记录你的调查笔记…"
+          placeholder="在这里记下你的调查笔记……"
           className="w-full h-[calc(100vh-400px)] min-h-[300px] p-4 rounded-lg bg-transparent font-mono text-amber-900 
                    focus:outline-none focus:ring-2 focus:ring-amber-500 resize-none"
           style={{
@@ -48,7 +48,7 @@ export function CaseNotes({ caseId }: CaseNotesProps) {
       </div>
 
       <div className="text-sm text-amber-700/70 italic">
-        你的笔记会自动保存在本地，并在不同会话之间持续保留。
+        你的笔记会自动保存在本地，重新打开后仍会保留。
       </div>
     </div>
   );

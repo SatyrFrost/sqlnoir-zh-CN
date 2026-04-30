@@ -56,7 +56,7 @@ export function SQLWorkspace({ caseId }: SQLWorkspaceProps) {
           (row) => row.length === result.columns.length
         );
         if (!isValid) {
-		  setError("查询结果结构无效"); // was: "Query result structure is invalid"
+		  setError("查询结果格式有误"); // was: "Query result structure is invalid"
 
          //setError("Query result structure is invalid");
           setResults({ columns: [], values: [] });
@@ -100,7 +100,7 @@ export function SQLWorkspace({ caseId }: SQLWorkspaceProps) {
     <div className="space-y-4">
       <div className="bg-amber-900 rounded-lg overflow-hidden">
         <div className="bg-amber-800 px-4 py-2 flex justify-between items-center">
-          <span className="text-amber-100 font-detective">SQL Query</span>
+          <span className="text-amber-100 font-detective">SQL 查询</span>
           <button
             onClick={handleExecute}
             disabled={isExecuting}
@@ -124,7 +124,7 @@ export function SQLWorkspace({ caseId }: SQLWorkspaceProps) {
             value={query}
             onChange={setQuery}
             onExecute={handleExecute}
-            placeholder="SELECT * FROM some_table WHERE..."
+            placeholder="例如： SELECT * FROM 表名 WHERE 条件"
             caseId={caseId}
           />
         </div>
@@ -191,7 +191,7 @@ export function SQLWorkspace({ caseId }: SQLWorkspaceProps) {
                       colSpan={Math.max(1, results.columns.length)}
                       className="px-6 py-4 whitespace-nowrap text-sm text-amber-900 italic"
                     >
-                      还没有结果。执行查询以查看结果。
+                      暂无结果。执行查询后即可在这里查看。
                     </td>
                   </tr>
                 )}

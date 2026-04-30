@@ -6,27 +6,28 @@ export function HintsAndTips() {
       <div className="bg-amber-100/50 p-6 rounded-lg border border-amber-900/10">
         <h3 className="font-detective text-xl text-amber-900 mb-4 flex items-center">
           <Lightbulb className="w-5 h-5 mr-2" />
-          Investigation Tips
+          调查提示
         </h3>
         <ul className="space-y-4">
           {[
             {
-              title: "Check for NULL Values",
-              description:
-                "Use IS NULL to find records with missing information in critical fields.",
-              example: "SELECT * FROM Orders WHERE ShipDate IS NULL;",
+              title: "检查 NULL 值",
+			  description:
+			    "使用 IS NULL 查找关键字段中信息缺失的记录。",
+			  example: 
+			    "SELECT * FROM Orders WHERE ShipDate IS NULL;",
             },
             {
-              title: "Join Multiple Tables",
+              title: "连接多张表",
               description:
-                "Connect orders with customer information using JOIN operations.",
+                "使用 JOIN 将订单信息与客户信息关联起来。",
               example:
                 "SELECT o.*, c.CompanyName FROM Orders o JOIN Customers c ON o.CustomerID = c.CustomerID;",
             },
             {
-              title: "Filter by Date Range",
+              title: "按日期范围筛选",
               description:
-                "Use BETWEEN operator to find orders within specific dates.",
+                "使用 BETWEEN 查找指定日期范围内的订单。",
               example:
                 "SELECT * FROM Orders WHERE OrderDate BETWEEN '1998-03-01' AND '1998-04-30';",
             },

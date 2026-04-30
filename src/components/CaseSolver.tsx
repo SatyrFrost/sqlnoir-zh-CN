@@ -18,10 +18,10 @@ import type { Case } from "../types";
 
 const tabs = [
   { id: "brief", label: "案件概要", icon: Book },
-  { id: "workspace", label: "SQL工作区", icon: Code },
-  { id: "schema", label: "模式", icon: Database },
-  { id: "notes", label: "笔记", icon: PenLine, desktopOnly: true },
-  { id: "submit", label: "提交", icon: Send },
+  { id: "workspace", label: "SQL 查询区", icon: Code },
+  { id: "schema", label: "数据库结构", icon: Database },
+  { id: "notes", label: "调查笔记", icon: PenLine, desktopOnly: true },
+  { id: "submit", label: "提交答案", icon: Send },
 ];
 
 interface CaseSolverProps {
@@ -108,7 +108,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
             className="flex items-center text-amber-900 hover:text-amber-700 font-detective"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back
+            返回案件列表
           </button>
           <span className="font-mono text-amber-900 text-sm">
             案号：{caseData.id.split("-")[1]}
@@ -154,7 +154,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
             className="flex items-center text-amber-900 hover:text-amber-700 font-detective"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            返回其他案件
+            返回案件列表
           </button>
           <div className="flex items-center gap-4">
             <button
@@ -170,7 +170,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
               ) : (
                 <Columns className="w-4 h-4 mr-2" />
               )}
-              {isSideBySide ? "上下堆叠视图" : "并排视图 "}
+              {isSideBySide ? "上下分栏视图" : "并排视图"}
             </button>
             <div className="bg-amber-100 px-4 py-2 rounded-lg">
               <span className="font-mono text-amber-900">
@@ -213,7 +213,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
                       {tab.label}
                       {isSideBySide && isActive && (
                         <span className="ml-2 text-xs opacity-75">
-                          {isActiveInTab1 ? "(Tab 1)" : "(Tab 2)"}
+                          {isActiveInTab1 ? "（窗口 1）" : "（窗口 2）"}
                         </span>
                       )}
                     </button>
@@ -230,7 +230,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
                         : "text-amber-700 hover:bg-amber-100"
                     }`}
                   >
-                    Tab 1
+                    窗口 1
                   </button>
                   <button
                     onClick={() => setActiveTabSelector(2)}
@@ -240,7 +240,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
                         : "text-amber-700 hover:bg-amber-100"
                     }`}
                   >
-                    Tab 2
+                    窗口 2
                   </button>
                 </div>
               )}
@@ -256,7 +256,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
             <div className={`${isSideBySide ? "lg:w-1/2 min-w-0" : ""}`}>
               {isSideBySide && (
                 <div className="mb-4 text-sm font-detective text-amber-900">
-                  Tab 1
+                  窗口 1
                 </div>
               )}
               {Object.entries(tabComponents).map(([id, component]) => (
@@ -268,7 +268,7 @@ export function CaseSolver({ caseData, onBack, onSolve }: CaseSolverProps) {
             {isSideBySide && (
               <div className="hidden lg:block lg:w-1/2 min-w-0 border-l border-amber-200 pl-6">
                 <div className="mb-4 text-sm font-detective text-amber-900">
-                  Tab 2
+                  窗口 2
                 </div>
                 {Object.entries(tabComponents).map(([id, component]) => (
                   <div key={id} className={secondaryTab === id ? "" : "hidden"}>

@@ -101,16 +101,16 @@ export function Dashboard({ onCaseSelect, solvedCases, onResetAll }: DashboardPr
     <div className="min-h-screen bg-amber-50/50">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-detective text-3xl text-amber-900">Case Files</h2>
+          <h2 className="font-detective text-3xl text-amber-900">案件档案</h2>
 
           {onResetAll && (
             <button
               onClick={onResetAll}
-              title="清除所有已完成案件与笔记"
+              title="清除所有已完成案件和笔记"
               className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs rounded-md border border-red-200 text-red-700 hover:bg-red-50"
             >
               <RotateCcw className="w-3.5 h-3.5" />
-              <span>Reset 重置</span>
+              <span>重置进度</span>
             </button>
           )}
         </div>
@@ -142,7 +142,7 @@ export function Dashboard({ onCaseSelect, solvedCases, onResetAll }: DashboardPr
                           <div className="bg-amber-100 px-4 py-2 rounded-full flex items-center shadow-lg transform -rotate-12">
                             <Lock className="w-4 h-4 mr-2 text-amber-700" />
                             <span className="font-detective text-amber-900">
-                              解开上一案件以解锁
+                              完成上一案件后解锁
                             </span>
                           </div>
                         </div>

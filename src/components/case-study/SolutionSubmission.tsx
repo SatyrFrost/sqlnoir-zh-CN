@@ -78,7 +78,7 @@ export function SolutionSubmission({
       setError(
         err instanceof Error
           ? err.message
-          : "An error occurred while updating progress"
+          : "更新进度时出错"
       );
       console.error("Error updating solved cases:", err);
     } finally {
@@ -120,7 +120,7 @@ export function SolutionSubmission({
                   }`}
                 >
                   
-				  {isCorrect ? "案件已解决！" : "还不太对"}
+				  {isCorrect ? "案件已侦破！" : "答案不对"}
 
                 </h4>
                 <p
@@ -128,12 +128,12 @@ export function SolutionSubmission({
                     isCorrect ? "text-green-700" : "text-red-700"
                   }`}
                 >
-                  {isCorrect ? caseData.solution.successMessage  :  "请尝试其他答案。"}
+                  {isCorrect ? caseData.solution.successMessage  :  "请再试试其他答案。"}
                 </p>
                 {isCorrect && (
                   <div className="bg-white/50 p-4 rounded-lg">
                     <h5 className="font-detective text-green-800 mb-2">
-                      答案解析:
+                      解析说明：
                     </h5>
                     <p className="text-green-700">
                       {caseData.solution.explanation}
@@ -168,7 +168,7 @@ export function SolutionSubmission({
                 disabled={isLoading}
               />
               <p className="mt-2 text-sm text-amber-700">
-                输入你通过调查发现的具体名字。
+                请输入你通过调查锁定的具体姓名。
               </p>
             </div>
 
@@ -191,7 +191,7 @@ export function SolutionSubmission({
                 {isLoading ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    Submitting...
+                    提交中...
                   </>
                 ) : (
                   <>

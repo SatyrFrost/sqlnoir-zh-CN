@@ -211,7 +211,7 @@ export function DatabaseSchemaGraph({ schema }: { schema: SchemaInfo[] }) {
         </ReactFlow>
       </div>
       <p className="text-sm text-amber-700 text-center italic">
-        Tip: You can drag and reposition tables to organize the schema view
+        提示：你可以拖动数据表，自行整理结构视图。
       </p>
     </div>
   );
@@ -295,7 +295,7 @@ export function DatabaseSchema({ caseId }: DatabaseSchemaProps) {
     return (
       <div className="flex items-center justify-center p-8">
         <Loader2 className="w-6 h-6 text-amber-700 animate-spin" />
-        <span className="ml-2 text-amber-900">Loading schema...</span>
+        <span className="ml-2 text-amber-900">正在加载数据库结构...</span>
       </div>
     );
   }
@@ -303,7 +303,7 @@ export function DatabaseSchema({ caseId }: DatabaseSchemaProps) {
   if (error) {
     return (
       <div className="bg-red-100 border border-red-300 text-red-800 px-4 py-3 rounded">
-        <p className="font-bold">Failed to load schema</p>
+        <p className="font-bold">数据库结构加载失败</p>
         <p className="text-sm">{error}</p>
       </div>
     );
@@ -312,7 +312,7 @@ export function DatabaseSchema({ caseId }: DatabaseSchemaProps) {
   if (schema.length === 0) {
     return (
       <div className="bg-amber-100/50 p-6 rounded-lg border border-amber-900/10">
-        <p className="text-amber-800">No tables found in the database.</p>
+        <p className="text-amber-800">数据库中未找到任何数据表。</p>
       </div>
     );
   }
@@ -379,7 +379,7 @@ export function DatabaseSchema({ caseId }: DatabaseSchemaProps) {
                         ? "opacity-100"
                         : "opacity-0 group-hover:opacity-100"
                     }`}
-                    title="Copy table name"
+                    title="复制表名"
                   >
                     <Copy className="w-3.5 h-3.5 text-amber-700" />
                   </button>
@@ -391,13 +391,13 @@ export function DatabaseSchema({ caseId }: DatabaseSchemaProps) {
                     <thead>
                       <tr className="bg-amber-50">
                         <th className="px-6 py-3 text-left text-xs font-detective text-amber-900">
-                          Column
+                          字段名
                         </th>
                         <th className="px-6 py-3 text-left text-xs font-detective text-amber-900">
-                          Type
+                          类型
                         </th>
                         <th className="px-6 py-3 text-left text-xs font-detective text-amber-900">
-                          Key
+                          键类型
                         </th>
                       </tr>
                     </thead>
