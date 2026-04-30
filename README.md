@@ -1,6 +1,6 @@
 # SQL Noir SQL黑探  🔍
 
-[➡️ Play the game online at sqlnoir-zh-cn.vercel.app](https://sqlnoir-zh-cn.vercel.app)
+[➡️ Play the game online at noir.great-site.net](https://noir.great-site.net/)
 
 ## Acknowledgements
 
